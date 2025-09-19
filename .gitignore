@@ -1,0 +1,39 @@
+# Archivos temporales
+*.tmp
+*.temp
+*.log
+*.bak
+*.backup
+
+# Archivos de prueba
+juno-test-report-*.txt
+/tmp/juno-test-*
+
+# Archivos de configuración local
+.env
+.env.local
+config.local.*
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos de compilación
+*.o
+*.so
+*.dylib
+
+# Archivos de datos del nodo (no subir al repo)
+juno-data/
+snapshots/
+*.tar.lz4
+*.tar.gz
+
+# Logs del sistema
+/var/log/juno/
