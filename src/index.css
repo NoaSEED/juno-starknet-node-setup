@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Colores del Banco Galicia */
+:root {
+  --galicia-blue: #003366;
+  --galicia-light-blue: #0066cc;
+  --galicia-green: #00a651;
+  --galicia-orange: #ff6600;
+  --galicia-gray: #666666;
+  --galicia-light-gray: #f5f5f5;
+  --galicia-border: #e0e0e0;
+  --galicia-white: #ffffff;
+}
+
+/* Utilidades */
+.text-galicia-blue { color: var(--galicia-blue); }
+.text-galicia-green { color: var(--galicia-green); }
+.text-galicia-orange { color: var(--galicia-orange); }
+.text-galicia-gray { color: var(--galicia-gray); }
+.bg-galicia-blue { background-color: var(--galicia-blue); }
+.bg-galicia-light-blue { background-color: var(--galicia-light-blue); }
+.bg-galicia-green { background-color: var(--galicia-green); }
+.bg-galicia-orange { background-color: var(--galicia-orange); }
+.bg-galicia-light-gray { background-color: var(--galicia-light-gray); }
+.bg-galicia-white { background-color: var(--galicia-white); }
+.border-galicia { border-color: var(--galicia-border); }
+
+/* Componentes base */
+.card {
+  background: var(--galicia-white);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--galicia-border);
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background-color: var(--galicia-blue);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--galicia-light-blue);
+}
+
+.btn-success {
+  background-color: var(--galicia-green);
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #008f47;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--galicia-blue);
+  border: 1px solid var(--galicia-blue);
+}
+
+.btn-outline:hover {
+  background-color: var(--galicia-blue);
+  color: white;
+}
+
+/* Layout específico de Galicia */
+.galicia-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.galicia-sidebar {
+  width: 280px;
+  background: var(--galicia-white);
+  border-right: 1px solid var(--galicia-border);
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+.galicia-main {
+  margin-left: 280px;
+  min-height: 100vh;
+  background: var(--galicia-light-gray);
+}
+
+.galicia-header {
+  background: var(--galicia-white);
+  border-bottom: 1px solid var(--galicia-border);
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.galicia-content {
+  padding: 30px;
+}
+
+/* Cards de criptomonedas */
+.crypto-card {
+  background: var(--galicia-white);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid var(--galicia-border);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.crypto-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.crypto-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+}
+
+.crypto-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--galicia-blue);
+  margin-bottom: 5px;
+}
+
+.crypto-full-name {
+  font-size: 14px;
+  color: var(--galicia-gray);
+  margin-bottom: 15px;
+}
+
+.crypto-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--galicia-blue);
+}
+
+/* Navegación */
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  color: var(--galicia-gray);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.nav-item:hover {
+  background-color: #f8f9fa;
+  color: var(--galicia-blue);
+}
+
+.nav-item.active {
+  background-color: #f8f9fa;
+  color: var(--galicia-orange);
+  border-left-color: var(--galicia-orange);
+}
+
+.nav-item.highlight {
+  background-color: #fff5f0;
+  color: var(--galicia-orange);
+  border-left-color: var(--galicia-orange);
+  font-weight: 600;
+}
+
+.nav-item.highlight:hover {
+  background-color: #ffe8d6;
+  color: var(--galicia-orange);
+}
+
+.nav-item i {
+  margin-right: 12px;
+  width: 20px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .galicia-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .galicia-sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .galicia-main {
+    margin-left: 0;
+  }
+  
+  .galicia-content {
+    padding: 20px 15px;
+  }
+  
+  .crypto-card {
+    margin-bottom: 15px;
+  }
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--galicia-gray);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--galicia-blue);
+}
