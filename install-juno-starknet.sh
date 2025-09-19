@@ -145,11 +145,12 @@ install_juno() {
         # Checkout versión específica
         git checkout $JUNO_VERSION
         
-        # Compilar JUNO
-        make install
-        
-        # Verificar instalación
-        junod version
+    # Compilar JUNO
+    export PATH=$PATH:/usr/local/go/bin
+    make install
+    
+    # Verificar instalación
+    /home/$JUNO_USER/go/bin/junod version
 EOF
     
     info "JUNO instalado correctamente"
