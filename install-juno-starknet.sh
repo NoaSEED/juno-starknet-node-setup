@@ -41,7 +41,7 @@ SERVICE_NAME="junod"
 CHAIN_ID="uni-6"
 
 # URLs para snapshots
-SNAPSHOT_URL="https://snapshots.polkachu.com/snapshots/juno/juno_latest.tar.lz4"
+SNAPSHOT_URL="https://snapshots.polkachu.com/snapshots/juno/juno_20241218.tar.lz4"
 
 # Función para verificar si el usuario es root
 check_root() {
