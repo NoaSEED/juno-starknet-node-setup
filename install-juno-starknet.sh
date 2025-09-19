@@ -33,7 +33,7 @@ info() {
 }
 
 # Configuración
-JUNO_VERSION="v0.13.0"
+JUNO_VERSION="v18.0.0"
 JUNO_USER="juno"
 JUNO_HOME="/home/$JUNO_USER/.juno"
 SNAPSHOT_DIR="/home/$JUNO_USER/snapshots"
