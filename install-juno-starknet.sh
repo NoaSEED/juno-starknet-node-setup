@@ -38,10 +38,10 @@ JUNO_USER="juno"
 JUNO_HOME="/home/$JUNO_USER/.juno"
 SNAPSHOT_DIR="/home/$JUNO_USER/snapshots"
 SERVICE_NAME="junod"
-CHAIN_ID="uni-6"
+CHAIN_ID="juno-sepolia"
 
 # URLs para snapshots
-SNAPSHOT_URL="https://snapshots.polkachu.com/snapshots/juno/juno_20241218.tar.lz4"
+SNAPSHOT_URL="https://juno-snapshots.nethermind.io/files/sepolia/latest"
 
 # Función para verificar si el usuario es root
 check_root() {
