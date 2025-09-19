@@ -36,11 +36,27 @@ sudo apt update
 # Instalar Go
 info "Instalando Go..."
 if command -v go &> /dev/null; then
-    info "Go ya está instalado: $(go version)"
+    GO_VERSION=$(go version | grep -oE 'go[0-9]+\.[0-9]+' | sed 's/go//')
+    if (( $(echo "$GO_VERSION >= 1.19" | bc -l) )); then
+        info "Go ya está instalado con versión compatible: $(go version)"
+    else
+        warning "Go versión $GO_VERSION es muy antigua, instalando versión más reciente..."
+        sudo apt remove -y golang-go
+        install_go_latest
+    fi
 else
-    sudo apt install -y golang-go
-    success "Go instalado correctamente"
+    install_go_latest
 fi
+
+install_go_latest() {
+    info "Instalando Go 1.21..."
+    wget -q https://go.dev/dl/go1.21.6.linux-amd64.tar.gz
+    sudo tar -C /usr/local -xzf go1.21.6.linux-amd64.tar.gz
+    echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+    export PATH=$PATH:/usr/local/go/bin
+    rm go1.21.6.linux-amd64.tar.gz
+    success "Go 1.21 instalado correctamente"
+}
 
 # Instalar npm
 info "Instalando npm..."
@@ -64,7 +80,7 @@ fi
 
 # Instalar dependencias adicionales
 info "Instalando dependencias adicionales..."
-sudo apt install -y curl wget git jq lz4 build-essential
+sudo apt install -y curl wget git jq lz4 build-essential bc
 
 # Verificar instalaciones
 echo ""
